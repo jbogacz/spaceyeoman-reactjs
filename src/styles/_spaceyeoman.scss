@@ -1,0 +1,45 @@
+// ----------------------------------------------------------------- //
+// SPACE YEOMAN CUSTOM STYLES                                        //
+// ----------------------------------------------------------------- //
+ 
+.page {
+    margin: 15px auto;
+}
+
+// .landGrid { }
+
+.gridItem {
+    border: 0.1px dashed #d05f17;
+    color: white;
+
+    text-align: center;
+}
+
+.gridItemClicked {
+    background-color: #d05f17;
+    font-weight: 900;
+}
+
+.gridItemOccupied {
+    background-color: #3f4448;
+    font-weight: 900;
+    color: whitesmoke;
+}
+
+.modal {
+    bottom: auto;
+}
+
+.ui.segment {
+    background-color: #17181c;
+}
+
+.ui.card {
+    background-color: #32333a !important;
+    color: whitesmoke !important;
+}
+
+.ui.card > .content > .header, .ui.cards > .card > .content > .header {
+    color: whitesmoke !important;
+}
+

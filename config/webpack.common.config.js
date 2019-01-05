@@ -12,16 +12,7 @@ const config = {
     },
     module: {
         rules: [
-            {
-                enforce: 'pre',
-                test: /\.js$/,
-                loader: 'eslint-loader',
-                options: {
-                    failOnWarning: true,
-                    failOnerror: true
-                },
-                exclude: /node_modules/
-            },
+
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
@@ -29,23 +20,21 @@ const config = {
             },
             {
                 test: /\.s?css$/,
-                use: ExtractTextWebpackPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'css-loader'
-                        },
-                        {
-                            loader: 'sass-loader'
-                        }
-                    ]
-                })                
-                //exclude: /node_modules/
-            },
+                use: ['css-hot-loader'].concat(ExtractTextWebpackPlugin.extract({
+                  fallback: 'style-loader',
+                  use: [
+                    {
+                        loader: 'css-loader'
+                    },
+                    {
+                        loader: 'sass-loader'
+                    }
+                ]
+                })),
+              },
             {
-                test: /\.svg|.png|.jpg$/,
-                loader: 'url-loader',
-                exclude: /node_modules/
+              test: /\.(png|woff|woff2|eot|ttf|svg|jpg)$/,
+              loader: 'url-loader?limit=100000'
             }
         ]
     },

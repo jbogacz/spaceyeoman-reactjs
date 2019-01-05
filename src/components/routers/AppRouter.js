@@ -5,24 +5,25 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 // IMPORT PROJECT REFERENCES
 
-import { Header } from '../Header/Header';
+import { Header } from '../Header';
+import { Footer } from '../Footer';
 import { HomePage } from '../pages/HomePage';
-import { AboutPage } from '../pages/AboutPage';
-import { ZipCodesPage } from '../pages/ZipCodesPage';
-
+import { BuyPage } from '../pages/BuyPage';
+import { MyPage } from '../pages/MyPage';
 
 // COMPONENT
 
 export const AppRouter = () => (
     <BrowserRouter>
         <Fragment>
-            <Header />            
+            <Header />
             <Switch>
                 <Route path='/' component={HomePage} exact={true} />
-                <Route path='/zipcodes' component={ZipCodesPage} />
-                <Route path='/about' component={AboutPage} />
+                <Route path='/buy' component={BuyPage} />
+                <Route path='/my' component={MyPage} />
                 <Redirect to="/" />
             </Switch>
+            <Footer />
         </Fragment>
     </BrowserRouter>
 );
